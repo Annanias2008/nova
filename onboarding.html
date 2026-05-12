@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Welcome to Nova Budgeting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="onboarding.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="onboarding-body">
+    <div class="onboarding-container">
+        <!-- Progress Indicator -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Slides Container -->
+        <div class="slides-container" id="slidesContainer">
+            <!-- Slide 1: Welcome -->
+            <div class="slide active" data-slide="1">
+                <div class="slide-content">
+                    <div class="slide-icon">
+                        <div class="logo-orbit-large"></div>
+                        <span class="logo-letter-large">N</span>
+                    </div>
+                    <h1 class="slide-title">Welcome to Nova Budgeting</h1>
+                    <p class="slide-subtitle">AI That Budgets for You – Automated, Adaptive, Effortless</p>
+                    <div class="feature-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🤖</span>
+                            <span class="highlight-text">AI-Powered Automation</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🔒</span>
+                            <span class="highlight-text">Bank-Level Security</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">📊</span>
+                            <span class="highlight-text">Smart Insights</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Link Accounts -->
+            <div class="slide" data-slide="2">
+                <div class="slide-content">
+                    <div class="slide-icon">💳</div>
+                    <h2 class="slide-title">Connect Your Accounts</h2>
+                    <p class="slide-subtitle">Securely link your bank accounts, credit cards, and investments</p>
+                    <div class="demo-card glass-card">
+                        <div class="demo-item">
+                            <span class="demo-icon">🏦</span>
+                            <span class="demo-text">Automatic transaction import</span>
+                        </div>
+                        <div class="demo-item">
+                            <span class="demo-icon">🔄</span>
+                            <span class="demo-text">Real-time balance updates</span>
+                        </div>
+                        <div class="demo-item">
+                            <span class="demo-icon">🔐</span>
+                            <span class="demo-text">256-bit encryption</span>
+                        </div>
+                    </div>
+                    <button class="demo-action-btn glass-card"
+                        onclick="alert('In production, this would open Plaid account linking')">
+                        Link Accounts Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Slide 3: AI Categorization -->
+            <div class="slide" data-slide="3">
+                <div class="slide-content">
+                    <div class="slide-icon">✨</div>
+                    <h2 class="slide-title">AI Auto-Categorization</h2>
+                    <p class="slide-subtitle">95%+ accuracy with smart merchant recognition</p>
+                    <div class="demo-card glass-card">
+                        <div class="category-demo">
+                            <div class="transaction-preview">
+                                <span class="merchant">Starbucks</span>
+                                <span class="arrow">→</span>
+                                <span class="category">☕ Coffee & Cafes</span>
+                            </div>
+                            <div class="transaction-preview">
+                                <span class="merchant">Whole Foods</span>
+                                <span class="arrow">→</span>
+                                <span class="category">🛒 Groceries</span>
+                            </div>
+                            <div class="transaction-preview">
+                                <span class="merchant">Shell Gas</span>
+                                <span class="arrow">→</span>
+                                <span class="category">⛽ Transportation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="slide-note">You can always edit or split transactions manually</p>
+                </div>
+            </div>
+
+            <!-- Slide 4: Set Monthly Income -->
+            <div class="slide" data-slide="4">
+                <div class="slide-content">
+                    <div class="slide-icon">💰</div>
+                    <h2 class="slide-title">What's Your Monthly Income?</h2>
+                    <p class="slide-subtitle">This helps us create your personalized budget</p>
+                    <div class="input-card glass-card">
+                        <label class="input-label">Monthly Take-Home Pay</label>
+                        <div class="currency-input">
+                            <span class="currency-symbol">$</span>
+                            <input type="number" class="income-input" id="incomeInput" placeholder="4,500" value="4500">
+                        </div>
+                        <p class="input-hint">Enter your after-tax monthly income</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: AI Budget Proposal -->
+            <div class="slide" data-slide="5">
+                <div class="slide-content">
+                    <div class="slide-icon">🎯</div>
+                    <h2 class="slide-title">Your AI-Generated Budget</h2>
+                    <p class="slide-subtitle">Based on your income and smart defaults</p>
+                    <div class="budget-preview glass-card">
+                        <div class="budget-item">
+                            <span class="budget-category">🏠 Housing</span>
+                            <span class="budget-amount">$1,350</span>
+                            <span class="budget-percent">30%</span>
+                        </div>
+                        <div class="budget-item">
+                            <span class="budget-category">🍽️ Food & Dining</span>
+                            <span class="budget-amount">$450</span>
+                            <span class="budget-percent">10%</span>
+                        </div>
+                        <div class="budget-item">
+                            <span class="budget-category">🚗 Transportation</span>
+                            <span class="budget-amount">$225</span>
+                            <span class="budget-percent">5%</span>
+                        </div>
+                        <div class="budget-item">
+                            <span class="budget-category">💡 Utilities</span>
+                            <span class="budget-amount">$180</span>
+                            <span class="budget-percent">4%</span>
+                        </div>
+                        <div class="budget-item highlight">
+                            <span class="budget-category">💰 Savings</span>
+                            <span class="budget-amount">$900</span>
+                            <span class="budget-percent">20%</span>
+                        </div>
+                    </div>
+                    <p class="slide-note">You can customize these anytime</p>
+                </div>
+            </div>
+
+            <!-- Slide 6: Permissions -->
+            <div class="slide" data-slide="6">
+                <div class="slide-content">
+                    <div class="slide-icon">🔔</div>
+                    <h2 class="slide-title">Stay on Track</h2>
+                    <p class="slide-subtitle">Enable notifications for important updates</p>
+                    <div class="permissions-card glass-card">
+                        <div class="permission-item">
+                            <div class="permission-info">
+                                <span class="permission-icon">📬</span>
+                                <div class="permission-text">
+                                    <h4 class="permission-title">Bill Reminders</h4>
+                                    <p class="permission-desc">Never miss a payment</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="permission-item">
+                            <div class="permission-info">
+                                <span class="permission-icon">⚠️</span>
+                                <div class="permission-text">
+                                    <h4 class="permission-title">Budget Alerts</h4>
+                                    <p class="permission-desc">When you're close to limits</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="permission-item">
+                            <div class="permission-info">
+                                <span class="permission-icon">🎯</span>
+                                <div class="permission-text">
+                                    <h4 class="permission-title">Goal Milestones</h4>
+                                    <p class="permission-desc">Celebrate your progress</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Ready -->
+            <div class="slide" data-slide="7">
+                <div class="slide-content">
+                    <div class="slide-icon">🚀</div>
+                    <h2 class="slide-title">You're All Set!</h2>
+                    <p class="slide-subtitle">Let's start managing your finances smarter</p>
+                    <div class="ready-card glass-card">
+                        <div class="ready-stat">
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Accounts Linked</span>
+                        </div>
+                        <div class="ready-stat">
+                            <span class="stat-value">$4,500</span>
+                            <span class="stat-label">Monthly Budget</span>
+                        </div>
+                        <div class="ready-stat">
+                            <span class="stat-value">AI</span>
+                            <span class="stat-label">Ready to Help</span>
+                        </div>
+                    </div>
+                    <button class="finish-btn" onclick="window.location.href='index.html'">
+                        Go to Dashboard →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="onboarding-nav">
+            <button class="nav-btn skip-btn" id="skipBtn">Skip</button>
+            <div class="dots-indicator" id="dotsIndicator">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <button class="nav-btn next-btn" id="nextBtn">Next</button>
+        </div>
+    </div>
+
+    <script src="onboarding.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nova Budgeting - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span class="time">13:12</span>
+            <div class="status-icons">
+                <span class="refresh-indicator rotating">↻</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="page-title">Dashboard</h1>
+
+            <!-- Hero Balance Card -->
+            <div class="hero-card glass-card">
+                <div class="balance-section">
+                    <p class="balance-label">Available Balance</p>
+                    <h2 class="balance-amount">$4,872.34</h2>
+                    <div class="net-worth">
+                        <span>Net Worth: $28,450</span>
+                        <span class="positive">↑ 3.2%</span>
+                    </div>
+                    <svg class="sparkline" viewBox="0 0 200 40">
+                        <polyline points="0,30 25,25 50,28 75,20 100,22 125,15 150,18 175,12 200,10" fill="none"
+                            stroke="url(#sparkGradient)" stroke-width="2" />
+                        <defs>
+                            <linearGradient id="sparkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#0F4C81;stop-opacity:0.5" />
+                                <stop offset="100%" style="stop-color:#10B981;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Quick Stats Scroll -->
+            <div class="horizontal-scroll">
+                <!-- Spending Progress -->
+                <div class="stat-card glass-card">
+                    <p class="stat-label">This Month Spending</p>
+                    <div class="progress-ring">
+                        <svg width="100" height="100">
+                            <circle cx="50" cy="50" r="40" class="progress-ring-bg" />
+                            <circle cx="50" cy="50" r="40" class="progress-ring-fill"
+                                style="stroke-dashoffset: 62.8;" />
+                        </svg>
+                        <div class="progress-center">
+                            <span class="progress-percent">49%</span>
+                        </div>
+                    </div>
+                    <p class="stat-amount">$1,234 / $2,500</p>
+                </div>
+
+                <!-- In My Pocket -->
+                <div class="stat-card glass-card">
+                    <p class="stat-label">In My Pocket</p>
+                    <h3 class="pocket-amount">$456</h3>
+                    <div class="pocket-bar">
+                        <div class="pocket-bar-fill" style="width: 35%;"></div>
+                    </div>
+                    <p class="stat-sublabel">Disposable income</p>
+                </div>
+
+                <!-- Upcoming Bill -->
+                <div class="stat-card glass-card bill-card">
+                    <p class="stat-label">Next Bill</p>
+                    <div class="bill-info">
+                        <div class="bill-icon">N</div>
+                        <div>
+                            <p class="bill-name">Netflix</p>
+                            <p class="bill-date">Tomorrow</p>
+                        </div>
+                    </div>
+                    <p class="bill-amount">$15.99</p>
+                </div>
+            </div>
+
+            <!-- AI Insight -->
+            <div class="ai-insight glass-card">
+                <div class="ai-header">
+                    <span class="ai-icon">✨</span>
+                    <span class="ai-label">AI Insight</span>
+                </div>
+                <p class="ai-message">You're under budget in Food by $87 – good job! Try saving an extra $50?</p>
+                <button class="ai-action-btn">Act on This</button>
+            </div>
+
+            <!-- Recent Transactions -->
+            <div class="section-header">
+                <h3>Recent Transactions</h3>
+                <a href="transactions.html" class="see-all">See All</a>
+            </div>
+            <div class="transactions-list">
+                <div class="transaction-item">
+                    <div class="merchant-icon">☕</div>
+                    <div class="transaction-info">
+                        <p class="merchant-name">Starbucks #1234</p>
+                        <p class="transaction-time">Today, 9:23 AM</p>
+                    </div>
+                    <div class="transaction-right">
+                        <p class="transaction-amount negative">-$4.50</p>
+                        <span class="category-pill">Coffee</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="merchant-icon">🍕</div>
+                    <div class="transaction-info">
+                        <p class="merchant-name">Pizza Palace</p>
+                        <p class="transaction-time">Yesterday, 7:15 PM</p>
+                    </div>
+                    <div class="transaction-right">
+                        <p class="transaction-amount negative">-$28.50</p>
+                        <span class="category-pill">Dining</span>
+                    </div>
+                </div>
+                <div class="transaction-item">
+                    <div class="merchant-icon">💰</div>
+                    <div class="transaction-info">
+                        <p class="merchant-name">Paycheck Deposit</p>
+                        <p class="transaction-time">Feb 1, 8:00 AM</p>
+                    </div>
+                    <div class="transaction-right">
+                        <p class="transaction-amount positive">+$3,200.00</p>
+                        <span class="category-pill income">Income</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FAB Button -->
+        <button class="fab">+</button>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="transactions.html" class="nav-item">
+                <span class="nav-icon">📋</span>
+                <span class="nav-label">Transactions</span>
+            </a>
+            <a href="budgets.html" class="nav-item">
+                <span class="nav-icon">💼</span>
+                <span class="nav-label">Budgets</span>
+            </a>
+            <a href="insights.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Insights</span>
+            </a>
+            <a href="more.html" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">More</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="add-transaction.js"></script>
+</body>
+
+</html>

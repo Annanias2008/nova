@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nova Budgeting - Transactions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transactions.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="status-bar">
+            <span class="time">13:43</span>
+            <div class="status-icons">
+                <span class="refresh-indicator">↻</span>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <h1 class="page-title">Transactions</h1>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" class="search-input glass-card" placeholder="Search transactions...">
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <!-- Filter Chips -->
+            <div class="filter-chips">
+                <button class="chip active">All</button>
+                <button class="chip">This Month</button>
+                <button class="chip">Uncategorized</button>
+                <button class="chip">Income</button>
+                <button class="chip">Expenses</button>
+            </div>
+
+            <!-- Transactions by Date -->
+            <div class="transactions-container">
+                <!-- Today -->
+                <div class="date-group">
+                    <h3 class="date-header">Today</h3>
+                    <div class="date-transactions">
+                        <div class="transaction-row" data-swipeable>
+                            <div class="transaction-content">
+                                <div class="merchant-logo">☕</div>
+                                <div class="transaction-details">
+                                    <p class="merchant-name">Starbucks #1234</p>
+                                    <p class="transaction-meta">9:23 AM • Chase ••1234</p>
+                                </div>
+                                <div class="transaction-amount-section">
+                                    <p class="transaction-amount negative">-$4.50</p>
+                                    <span class="category-tag coffee">Coffee</span>
+                                </div>
+                            </div>
+                            <div class="swipe-actions">
+                                <button class="swipe-action categorize">📂</button>
+                                <button class="swipe-action split">✂️</button>
+                                <button class="swipe-action flag">🚩</button>
+                                <button class="swipe-action delete">🗑️</button>
+                            </div>
+                        </div>
+
+                        <div class="transaction-row" data-swipeable>
+                            <div class="transaction-content">
+                                <div class="merchant-logo">🛒</div>
+                                <div class="transaction-details">
+                                    <p class="merchant-name">Whole Foods Market</p>
+                                    <p class="transaction-meta">7:45 AM • Amex ••5678</p>
+                                </div>
+                                <div class="transaction-amount-section">
+                                    <p class="transaction-amount negative">-$87.32</p>
+                                    <span class="category-tag groceries">Groceries</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yesterday -->
+                <div class="date-group">
+                    <h3 class="date-header">Yesterday</h3>
+                    <div class="date-transactions">
+                        <div class="transaction-row" data-swipeable>
+                            <div class="transaction-content">
+                                <div class="merchant-logo">🍕</div>
+                                <div class="transaction-details">
+                                    <p class="merchant-name">Pizza Palace</p>
+                                    <p class="transaction-meta">7:15 PM • Chase ••1234</p>
+                                </div>
+                                <div class="transaction-amount-section">
+                                    <p class="transaction-amount negative">-$28.50</p>
+                                    <span class="category-tag dining">Dining Out</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-row" data-swipeable>
+                            <div class="transaction-content">
+                                <div class="merchant-logo">⛽</div>
+                                <div class="transaction-details">
+                                    <p class="merchant-name">Shell Gas Station</p>
+                                    <p class="transaction-meta">2:30 PM • Chase ••1234</p>
+                                </div>
+                                <div class="transaction-amount-section">
+                                    <p class="transaction-amount negative">-$45.00</p>
+                                    <span class="category-tag transport">Gas</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-row uncategorized" data-swipeable>
+                            <div class="transaction-content">
+                                <div class="merchant-logo">❓</div>
+                                <div class="transaction-details">
+                                    <p class="merchant-name">ACH Transfer #8472</p>
+                                    <p class="transaction-meta">10:00 AM • Chase ••1234</p>
+                                </div>
+                                <div class="transaction-amount-section">
+                                    <p class="transaction-amount negative">-$150.00</p>
+                                    <span class="category-tag uncategorized">Uncategorized</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feb 1 -->
+                <div class="date-group">
+                    <h3 class="date-header">Feb 1</h3>
+                    <div class="date-transactions">
+                        <div class="transaction-row income-row" data-swipeable>
+                            <div class="transaction-content">
+                                <div class="merchant-logo income">💰</div>
+                                <div class="transaction-details">
+                                    <p class="merchant-name">Paycheck Deposit</p>
+                                    <p class="transaction-meta">8:00 AM • Chase ••1234</p>
+                                </div>
+                                <div class="transaction-amount-section">
+                                    <p class="transaction-amount positive">+$3,200.00</p>
+                                    <span class="category-tag income">Income</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-row" data-swipeable>
+                            <div class="transaction-content">
+                                <div class="merchant-logo">🏠</div>
+                                <div class="transaction-details">
+                                    <p class="merchant-name">Rent Payment</p>
+                                    <p class="transaction-meta">9:00 AM • Chase ••1234</p>
+                                </div>
+                                <div class="transaction-amount-section">
+                                    <p class="transaction-amount negative">-$1,200.00</p>
+                                    <span class="category-tag housing">Housing</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="transaction-row recurring" data-swipeable>
+                            <div class="transaction-content">
+                                <div class="merchant-logo">📺</div>
+                                <div class="transaction-details">
+                                    <p class="merchant-name">Netflix Subscription</p>
+                                    <p class="transaction-meta">12:00 PM • Amex ••5678 • 🔄 Recurring</p>
+                                </div>
+                                <div class="transaction-amount-section">
+                                    <p class="transaction-amount negative">-$15.99</p>
+                                    <span class="category-tag entertainment">Streaming</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bulk Actions Bar (hidden by default) -->
+            <div class="bulk-actions-bar" style="display: none;">
+                <button class="bulk-action">Categorize</button>
+                <button class="bulk-action">Delete</button>
+                <button class="bulk-action">Export</button>
+            </div>
+        </main>
+
+        <button class="fab">+</button>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="transactions.html" class="nav-item active">
+                <span class="nav-icon">📋</span>
+                <span class="nav-label">Transactions</span>
+            </a>
+            <a href="budgets.html" class="nav-item">
+                <span class="nav-icon">💼</span>
+                <span class="nav-label">Budgets</span>
+            </a>
+            <a href="insights.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Insights</span>
+            </a>
+            <a href="more.html" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">More</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="transactions.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nova Budgeting - Budgets</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="budgets.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="status-bar">
+            <span class="time">13:12</span>
+            <div class="status-icons">
+                <span class="refresh-indicator">↻</span>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <h1 class="page-title">Budgets</h1>
+
+            <!-- Toggle & Summary -->
+            <div class="budget-header glass-card">
+                <div class="period-toggle">
+                    <button class="toggle-btn active">Monthly</button>
+                    <button class="toggle-btn">Weekly</button>
+                </div>
+                <div class="budget-summary">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Budgeted</span>
+                        <span class="summary-amount">$3,200</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-item">
+                        <span class="summary-label">Income</span>
+                        <span class="summary-amount positive">$4,500</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Optimize Button -->
+            <button class="optimize-btn glass-card">
+                <span class="optimize-icon">✨</span>
+                <span>AI Optimize Budgets</span>
+            </button>
+
+            <!-- Budget Categories -->
+            <div class="budget-categories">
+                <!-- Housing -->
+                <div class="budget-card glass-card">
+                    <div class="budget-header-row">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #6366F1, #8B5CF6);">🏠
+                        </div>
+                        <div class="category-info">
+                            <h3 class="category-name">Housing</h3>
+                            <p class="category-subtitle">Rent, utilities, maintenance</p>
+                        </div>
+                    </div>
+                    <div class="budget-progress">
+                        <div class="progress-ring-container">
+                            <svg width="120" height="120" class="budget-ring">
+                                <circle cx="60" cy="60" r="50" class="ring-bg" />
+                                <circle cx="60" cy="60" r="50" class="ring-fill emerald"
+                                    style="stroke-dashoffset: 62.8;" />
+                            </svg>
+                            <div class="ring-center">
+                                <span class="ring-percent">82%</span>
+                                <span class="ring-label">spent</span>
+                            </div>
+                        </div>
+                        <div class="budget-amounts">
+                            <div class="amount-row">
+                                <span class="amount-label">Budgeted</span>
+                                <span class="amount-value">$1,200</span>
+                            </div>
+                            <div class="amount-row">
+                                <span class="amount-label">Spent</span>
+                                <span class="amount-value spent">$980</span>
+                            </div>
+                            <div class="amount-row highlight">
+                                <span class="amount-label">Remaining</span>
+                                <span class="amount-value remaining">$220</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food & Dining -->
+                <div class="budget-card glass-card">
+                    <div class="budget-header-row">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #10B981, #059669);">🍽️
+                        </div>
+                        <div class="category-info">
+                            <h3 class="category-name">Food & Dining</h3>
+                            <p class="category-subtitle">Groceries, restaurants</p>
+                        </div>
+                    </div>
+                    <div class="budget-progress">
+                        <div class="progress-ring-container">
+                            <svg width="120" height="120" class="budget-ring">
+                                <circle cx="60" cy="60" r="50" class="ring-bg" />
+                                <circle cx="60" cy="60" r="50" class="ring-fill emerald"
+                                    style="stroke-dashoffset: 94.2;" />
+                            </svg>
+                            <div class="ring-center">
+                                <span class="ring-percent">70%</span>
+                                <span class="ring-label">spent</span>
+                            </div>
+                        </div>
+                        <div class="budget-amounts">
+                            <div class="amount-row">
+                                <span class="amount-label">Budgeted</span>
+                                <span class="amount-value">$450</span>
+                            </div>
+                            <div class="amount-row">
+                                <span class="amount-label">Spent</span>
+                                <span class="amount-value spent">$315</span>
+                            </div>
+                            <div class="amount-row highlight">
+                                <span class="amount-label">Remaining</span>
+                                <span class="amount-value remaining">$135</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transportation -->
+                <div class="budget-card glass-card">
+                    <div class="budget-header-row">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #F59E0B, #D97706);">🚗
+                        </div>
+                        <div class="category-info">
+                            <h3 class="category-name">Transportation</h3>
+                            <p class="category-subtitle">Gas, parking, transit</p>
+                        </div>
+                    </div>
+                    <div class="budget-progress">
+                        <div class="progress-ring-container">
+                            <svg width="120" height="120" class="budget-ring">
+                                <circle cx="60" cy="60" r="50" class="ring-bg" />
+                                <circle cx="60" cy="60" r="50" class="ring-fill warning"
+                                    style="stroke-dashoffset: 31.4;" />
+                            </svg>
+                            <div class="ring-center">
+                                <span class="ring-percent">90%</span>
+                                <span class="ring-label">spent</span>
+                            </div>
+                        </div>
+                        <div class="budget-amounts">
+                            <div class="amount-row">
+                                <span class="amount-label">Budgeted</span>
+                                <span class="amount-value">$200</span>
+                            </div>
+                            <div class="amount-row">
+                                <span class="amount-label">Spent</span>
+                                <span class="amount-value spent">$180</span>
+                            </div>
+                            <div class="amount-row highlight">
+                                <span class="amount-label">Remaining</span>
+                                <span class="amount-value remaining warning-text">$20</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entertainment - Over Budget -->
+                <div class="budget-card glass-card over-budget">
+                    <div class="budget-header-row">
+                        <div class="category-icon" style="background: linear-gradient(135deg, #FF6B6B, #EF4444);">🎮
+                        </div>
+                        <div class="category-info">
+                            <h3 class="category-name">Entertainment</h3>
+                            <p class="category-subtitle">Streaming, games, hobbies</p>
+                        </div>
+                        <span class="over-badge">Over</span>
+                    </div>
+                    <div class="budget-progress">
+                        <div class="progress-ring-container">
+                            <svg width="120" height="120" class="budget-ring">
+                                <circle cx="60" cy="60" r="50" class="ring-bg" />
+                                <circle cx="60" cy="60" r="50" class="ring-fill coral"
+                                    style="stroke-dashoffset: -15.7;" />
+                            </svg>
+                            <div class="ring-center">
+                                <span class="ring-percent">110%</span>
+                                <span class="ring-label">spent</span>
+                            </div>
+                        </div>
+                        <div class="budget-amounts">
+                            <div class="amount-row">
+                                <span class="amount-label">Budgeted</span>
+                                <span class="amount-value">$100</span>
+                            </div>
+                            <div class="amount-row">
+                                <span class="amount-label">Spent</span>
+                                <span class="amount-value spent">$110</span>
+                            </div>
+                            <div class="amount-row highlight">
+                                <span class="amount-label">Over by</span>
+                                <span class="amount-value remaining coral-text">$10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Category Button -->
+            <button class="add-category-btn glass-card">
+                <span class="add-icon">+</span>
+                <span>Add Category</span>
+            </button>
+        </main>
+
+        <button class="fab">+</button>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="transactions.html" class="nav-item">
+                <span class="nav-icon">📋</span>
+                <span class="nav-label">Transactions</span>
+            </a>
+            <a href="budgets.html" class="nav-item active">
+                <span class="nav-icon">💼</span>
+                <span class="nav-label">Budgets</span>
+            </a>
+            <a href="insights.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Insights</span>
+            </a>
+            <a href="more.html" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">More</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

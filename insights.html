@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nova Budgeting - Insights</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="insights.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="status-bar">
+            <span class="time">13:43</span>
+            <div class="status-icons">
+                <span class="refresh-indicator">↻</span>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <h1 class="page-title">Insights</h1>
+
+            <!-- Tab Navigation -->
+            <div class="insights-tabs">
+                <button class="insight-tab active" data-tab="overview">Overview</button>
+                <button class="insight-tab" data-tab="spending">Spending</button>
+                <button class="insight-tab" data-tab="trends">Trends</button>
+                <button class="insight-tab" data-tab="cashflow">Cash Flow</button>
+            </div>
+
+            <!-- Overview Tab -->
+            <div class="tab-content active" id="overview">
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card glass-card">
+                        <p class="kpi-label">Total Spent</p>
+                        <h3 class="kpi-value">$2,450</h3>
+                        <p class="kpi-change negative">↑ 12% vs last month</p>
+                    </div>
+                    <div class="kpi-card glass-card">
+                        <p class="kpi-label">Income</p>
+                        <h3 class="kpi-value">$4,500</h3>
+                        <p class="kpi-change positive">↑ 5% vs last month</p>
+                    </div>
+                    <div class="kpi-card glass-card">
+                        <p class="kpi-label">Savings Rate</p>
+                        <h3 class="kpi-value">18%</h3>
+                        <p class="kpi-change positive">↑ 3% vs last month</p>
+                    </div>
+                    <div class="kpi-card glass-card">
+                        <p class="kpi-label">Net Worth</p>
+                        <h3 class="kpi-value">$28,450</h3>
+                        <p class="kpi-change positive">↑ 3.2% vs last month</p>
+                    </div>
+                </div>
+
+                <!-- Top Categories -->
+                <div class="section-card glass-card">
+                    <h3 class="section-title">Top Spending Categories</h3>
+                    <div class="category-bars">
+                        <div class="category-bar-item">
+                            <div class="category-bar-header">
+                                <span class="category-bar-name">🏠 Housing</span>
+                                <span class="category-bar-amount">$980</span>
+                            </div>
+                            <div class="category-bar-track">
+                                <div class="category-bar-fill"
+                                    style="width: 40%; background: linear-gradient(90deg, #6366F1, #8B5CF6);"></div>
+                            </div>
+                        </div>
+                        <div class="category-bar-item">
+                            <div class="category-bar-header">
+                                <span class="category-bar-name">🍽️ Food & Dining</span>
+                                <span class="category-bar-amount">$402</span>
+                            </div>
+                            <div class="category-bar-track">
+                                <div class="category-bar-fill"
+                                    style="width: 32%; background: linear-gradient(90deg, #10B981, #059669);"></div>
+                            </div>
+                        </div>
+                        <div class="category-bar-item">
+                            <div class="category-bar-header">
+                                <span class="category-bar-name">🚗 Transportation</span>
+                                <span class="category-bar-amount">$225</span>
+                            </div>
+                            <div class="category-bar-track">
+                                <div class="category-bar-fill"
+                                    style="width: 18%; background: linear-gradient(90deg, #F59E0B, #D97706);"></div>
+                            </div>
+                        </div>
+                        <div class="category-bar-item">
+                            <div class="category-bar-header">
+                                <span class="category-bar-name">🎮 Entertainment</span>
+                                <span class="category-bar-amount">$110</span>
+                            </div>
+                            <div class="category-bar-track">
+                                <div class="category-bar-fill"
+                                    style="width: 10%; background: linear-gradient(90deg, #EC4899, #DB2777);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spending Tab -->
+            <div class="tab-content" id="spending">
+                <div class="section-card glass-card">
+                    <h3 class="section-title">Spending Breakdown</h3>
+                    <div class="donut-chart-container">
+                        <svg class="donut-chart" viewBox="0 0 200 200">
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#1F2937" stroke-width="40" />
+                            <!-- Housing: 40% -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#6366F1" stroke-width="40"
+                                stroke-dasharray="201 503" stroke-dashoffset="0" transform="rotate(-90 100 100)" />
+                            <!-- Food: 32% -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#10B981" stroke-width="40"
+                                stroke-dasharray="161 503" stroke-dashoffset="-201" transform="rotate(-90 100 100)" />
+                            <!-- Transport: 18% -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#F59E0B" stroke-width="40"
+                                stroke-dasharray="90 503" stroke-dashoffset="-362" transform="rotate(-90 100 100)" />
+                            <!-- Entertainment: 10% -->
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="#EC4899" stroke-width="40"
+                                stroke-dasharray="50 503" stroke-dashoffset="-452" transform="rotate(-90 100 100)" />
+                        </svg>
+                        <div class="donut-center">
+                            <p class="donut-label">Total</p>
+                            <p class="donut-value">$2,450</p>
+                        </div>
+                    </div>
+                    <div class="donut-legend">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #6366F1;"></span>
+                            <span class="legend-name">Housing</span>
+                            <span class="legend-percent">40%</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #10B981;"></span>
+                            <span class="legend-name">Food & Dining</span>
+                            <span class="legend-percent">32%</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #F59E0B;"></span>
+                            <span class="legend-name">Transportation</span>
+                            <span class="legend-percent">18%</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #EC4899;"></span>
+                            <span class="legend-name">Entertainment</span>
+                            <span class="legend-percent">10%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trends Tab -->
+            <div class="tab-content" id="trends">
+                <div class="section-card glass-card">
+                    <h3 class="section-title">Spending Trends (6 Months)</h3>
+                    <div class="line-chart-container">
+                        <svg class="line-chart" viewBox="0 0 300 150">
+                            <!-- Grid lines -->
+                            <line x1="0" y1="30" x2="300" y2="30" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                            <line x1="0" y1="60" x2="300" y2="60" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                            <line x1="0" y1="90" x2="300" y2="90" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+                            <line x1="0" y1="120" x2="300" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+
+                            <!-- Spending line -->
+                            <polyline points="0,100 50,90 100,95 150,80 200,85 250,70 300,60" fill="none"
+                                stroke="url(#trendGradient)" stroke-width="3" />
+
+                            <!-- Area fill -->
+                            <polygon points="0,100 50,90 100,95 150,80 200,85 250,70 300,60 300,150 0,150"
+                                fill="url(#trendFill)" opacity="0.2" />
+
+                            <defs>
+                                <linearGradient id="trendGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#0F4C81;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#10B981;stop-opacity:1" />
+                                </linearGradient>
+                                <linearGradient id="trendFill" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10B981;stop-opacity:0.3" />
+                                    <stop offset="100%" style="stop-color:#10B981;stop-opacity:0" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="chart-labels">
+                            <span>Sep</span>
+                            <span>Oct</span>
+                            <span>Nov</span>
+                            <span>Dec</span>
+                            <span>Jan</span>
+                            <span>Feb</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cash Flow Tab -->
+            <div class="tab-content" id="cashflow">
+                <div class="section-card glass-card">
+                    <h3 class="section-title">Cash Flow Forecast (30 Days)</h3>
+                    <div class="forecast-chart-container">
+                        <svg class="forecast-chart" viewBox="0 0 300 120">
+                            <!-- Current balance line -->
+                            <line x1="0" y1="60" x2="300" y2="60" stroke="rgba(255,255,255,0.1)" stroke-width="1"
+                                stroke-dasharray="4" />
+
+                            <!-- Projected balance -->
+                            <polyline points="0,60 60,50 120,55 180,45 240,50 300,40" fill="none" stroke="#10B981"
+                                stroke-width="2.5" />
+
+                            <!-- Income points -->
+                            <circle cx="60" cy="50" r="4" fill="#10B981" />
+                            <circle cx="240" cy="50" r="4" fill="#10B981" />
+
+                            <!-- Expense points -->
+                            <circle cx="120" cy="55" r="4" fill="#FF6B6B" />
+                            <circle cx="180" cy="45" r="4" fill="#FF6B6B" />
+                        </svg>
+                    </div>
+
+                    <div class="forecast-events">
+                        <div class="forecast-event income">
+                            <div class="event-icon">💰</div>
+                            <div class="event-details">
+                                <p class="event-name">Paycheck</p>
+                                <p class="event-date">Feb 15</p>
+                            </div>
+                            <p class="event-amount positive">+$3,200</p>
+                        </div>
+                        <div class="forecast-event expense">
+                            <div class="event-icon">🏠</div>
+                            <div class="event-details">
+                                <p class="event-name">Rent Payment</p>
+                                <p class="event-date">Feb 18</p>
+                            </div>
+                            <p class="event-amount negative">-$1,400</p>
+                        </div>
+                        <div class="forecast-event warning">
+                            <div class="event-icon">⚠️</div>
+                            <div class="event-details">
+                                <p class="event-name">Low Balance Alert</p>
+                                <p class="event-date">Feb 20</p>
+                            </div>
+                            <p class="event-amount">$892</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-insight glass-card">
+                    <div class="ai-header">
+                        <span class="ai-icon">✨</span>
+                        <span class="ai-label">AI Forecast</span>
+                    </div>
+                    <p class="ai-message">You'll have $892 after bills on Feb 20. Consider moving $200 to your Emergency
+                        Fund to stay on track.</p>
+                </div>
+            </div>
+        </main>
+
+        <button class="fab">+</button>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="transactions.html" class="nav-item">
+                <span class="nav-icon">📋</span>
+                <span class="nav-label">Transactions</span>
+            </a>
+            <a href="budgets.html" class="nav-item">
+                <span class="nav-icon">💼</span>
+                <span class="nav-label">Budgets</span>
+            </a>
+            <a href="insights.html" class="nav-item active">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Insights</span>
+            </a>
+            <a href="more.html" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">More</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="insights.js"></script>
+</body>
+
+</html>

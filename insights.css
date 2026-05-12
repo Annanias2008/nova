@@ -1,0 +1,294 @@
+/* Insights Screen Styles */
+
+.insights-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin-bottom: 24px;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+}
+
+.insights-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.insight-tab {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.insight-tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* KPI Grid */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.kpi-card {
+    padding: 20px;
+    text-align: center;
+}
+
+.kpi-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.kpi-value {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.kpi-change {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Section Card */
+.section-card {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Category Bars */
+.category-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.category-bar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.category-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.category-bar-name {
+    font-weight: 500;
+}
+
+.category-bar-amount {
+    font-weight: 700;
+}
+
+.category-bar-track {
+    width: 100%;
+    height: 8px;
+    background: var(--gray-700);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.category-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+/* Donut Chart */
+.donut-chart-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 24px;
+}
+
+.donut-chart {
+    width: 100%;
+    height: 100%;
+}
+
+.donut-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.donut-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.donut-value {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.legend-name {
+    flex: 1;
+    font-size: 14px;
+}
+
+.legend-percent {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Line Chart */
+.line-chart-container {
+    margin-bottom: 12px;
+}
+
+.line-chart {
+    width: 100%;
+    height: 150px;
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 0 4px;
+}
+
+/* Forecast Chart */
+.forecast-chart-container {
+    margin-bottom: 20px;
+}
+
+.forecast-chart {
+    width: 100%;
+    height: 120px;
+}
+
+.forecast-events {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.forecast-event {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.forecast-event.income {
+    border-color: rgba(16, 185, 129, 0.3);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.forecast-event.expense {
+    border-color: rgba(255, 107, 107, 0.3);
+    background: rgba(255, 107, 107, 0.05);
+}
+
+.forecast-event.warning {
+    border-color: rgba(251, 191, 36, 0.3);
+    background: rgba(251, 191, 36, 0.05);
+}
+
+.event-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--gray-700);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.event-date {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.event-amount {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .kpi-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

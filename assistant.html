@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nova Budgeting - Budget Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assistant.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="assistant-header">
+            <button class="back-btn" onclick="window.location.href='more.html'">
+                <span>←</span>
+            </button>
+            <div class="header-info">
+                <div class="ai-avatar-small">
+                    <div class="orb-small"></div>
+                </div>
+                <div class="header-text">
+                    <h2 class="header-title">Budget Assistant</h2>
+                    <p class="header-status">
+                        <span class="status-dot"></span>
+                        Online • Ready to help
+                    </p>
+                </div>
+            </div>
+            <button class="settings-btn" id="settingsBtn" title="Settings">
+                <span class="settings-icon">⚙️</span>
+            </button>
+            <button class="mode-toggle-btn" id="modeToggle">
+                <span class="mode-icon">😊</span>
+            </button>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container" id="chatContainer">
+            <!-- Welcome Message -->
+            <div class="message-group ai-message">
+                <div class="message-avatar">
+                    <div class="avatar-orb">✨</div>
+                </div>
+                <div class="message-content">
+                    <div class="message-bubble glass-card">
+                        <p class="message-text">Hey there! 👋 I'm your AI budget assistant. I'm here to help you
+                            understand your finances, optimize your budget, and reach your goals.</p>
+                    </div>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+
+            <!-- Suggested Prompts -->
+            <div class="suggested-prompts" id="suggestedPrompts">
+                <p class="prompts-label">Try asking me:</p>
+                <div class="prompts-grid">
+                    <button class="prompt-chip glass-card" data-prompt="How much can I spend on dining this week?">
+                        🍽️ Dining budget left
+                    </button>
+                    <button class="prompt-chip glass-card" data-prompt="Show me my biggest expenses this month">
+                        💰 Top expenses
+                    </button>
+                    <button class="prompt-chip glass-card" data-prompt="When will I reach my savings goal?">
+                        🎯 Goal timeline
+                    </button>
+                    <button class="prompt-chip glass-card" data-prompt="Help me optimize my budget">
+                        ✨ Optimize budget
+                    </button>
+                    <button class="prompt-chip glass-card" data-prompt="Find ways to save more money">
+                        💡 Savings tips
+                    </button>
+                    <button class="prompt-chip glass-card" data-prompt="Analyze my spending habits">
+                        📊 Spending analysis
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sample Conversation (will be populated by JS) -->
+            <div id="messagesContainer"></div>
+        </div>
+
+        <!-- Quick Actions Bar -->
+        <div class="quick-actions-bar">
+            <button class="quick-action-btn" data-action="transactions">
+                <span class="action-icon">📋</span>
+                <span class="action-label">Show Transactions</span>
+            </button>
+            <button class="quick-action-btn" data-action="budget">
+                <span class="action-icon">💼</span>
+                <span class="action-label">View Budget</span>
+            </button>
+            <button class="quick-action-btn" data-action="insights">
+                <span class="action-icon">📊</span>
+                <span class="action-label">See Insights</span>
+            </button>
+        </div>
+
+        <!-- Input Area -->
+        <div class="chat-input-container">
+            <div class="input-wrapper glass-card">
+                <button class="voice-btn" id="voiceBtn" aria-label="Voice input">
+                    <span class="voice-icon">🎤</span>
+                </button>
+                <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything about your budget..."
+                    autocomplete="off">
+                <button class="send-btn" id="sendBtn" aria-label="Send message">
+                    <span class="send-icon">→</span>
+                </button>
+            </div>
+            <p class="input-hint">💡 Tip: Try voice input or ask about specific categories</p>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settingsModal" style="display: none;">
+        <div class="modal-content glass-card">
+            <h3 class="modal-title">OpenAI Settings</h3>
+            <p class="modal-subtitle">Select your model. The API key is loaded securely from the server environment.</p>
+
+            <div class="settings-form">
+                <div class="form-group">
+                    <label for="modelSelect">Model</label>
+                    <select id="modelSelect" class="settings-select">
+                        <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Faster, Cheaper)</option>
+                        <option value="gpt-4">GPT-4 (Smarter, More Expensive)</option>
+                    </select>
+                </div>
+
+                <div class="api-status" id="apiStatus">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">Checking server status...</span>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="modal-btn secondary" id="closeSettings">Cancel</button>
+                    <button class="modal-btn primary" id="saveSettings">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mode Selection Modal -->
+    <div class="modal-overlay" id="modeModal" style="display: none;">
+        <div class="modal-content glass-card">
+            <h3 class="modal-title">Choose Assistant Mode</h3>
+            <p class="modal-subtitle">Pick a personality that fits your style</p>
+
+            <div class="mode-options">
+                <button class="mode-option glass-card active" data-mode="helpful">
+                    <span class="mode-emoji">😊</span>
+                    <div class="mode-info">
+                        <h4 class="mode-name">Helpful</h4>
+                        <p class="mode-desc">Friendly and encouraging advice</p>
+                    </div>
+                    <span class="mode-check">✓</span>
+                </button>
+
+                <button class="mode-option glass-card" data-mode="professional">
+                    <span class="mode-emoji">💼</span>
+                    <div class="mode-info">
+                        <h4 class="mode-name">Professional</h4>
+                        <p class="mode-desc">Formal financial guidance</p>
+                    </div>
+                    <span class="mode-check">✓</span>
+                </button>
+
+                <button class="mode-option glass-card" data-mode="sassy">
+                    <span class="mode-emoji">😎</span>
+                    <div class="mode-info">
+                        <h4 class="mode-name">Sassy</h4>
+                        <p class="mode-desc">Playful roasts & tough love (like Cleo)</p>
+                    </div>
+                    <span class="mode-check">✓</span>
+                </button>
+
+                <button class="mode-option glass-card" data-mode="motivational">
+                    <span class="mode-emoji">🔥</span>
+                    <div class="mode-info">
+                        <h4 class="mode-name">Motivational</h4>
+                        <p class="mode-desc">Energetic coaching & hype</p>
+                    </div>
+                    <span class="mode-check">✓</span>
+                </button>
+            </div>
+
+            <button class="modal-close-btn" id="closeModal">Done</button>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="assistant.js"></script>
+</body>
+
+</html>

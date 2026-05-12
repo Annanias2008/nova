@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Budgeting - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .welcome-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .welcome-content {
+            max-width: 500px;
+        }
+
+        .welcome-logo {
+            margin-bottom: 40px;
+        }
+
+        .welcome-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #FFFFFF, var(--accent));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .welcome-tagline {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            line-height: 1.5;
+        }
+
+        .welcome-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .welcome-btn {
+            padding: 18px 32px;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--positive));
+            border: none;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(15, 76, 129, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+        }
+    </style>
+</head>
+
+<body class="auth-body">
+    <div class="auth-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <div class="welcome-container">
+        <div class="welcome-content">
+            <div class="welcome-logo">
+                <div class="app-logo">
+                    <div class="logo-icon">
+                        <div class="logo-orbit"></div>
+                        <span class="logo-letter">N</span>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="welcome-title">Nova Budgeting</h1>
+            <p class="welcome-tagline">AI That Budgets for You – Automated, Adaptive, Effortless</p>
+
+            <div class="welcome-buttons">
+                <a href="register.html" class="welcome-btn btn-primary">Get Started</a>
+                <a href="login.html" class="welcome-btn btn-secondary">Sign In</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

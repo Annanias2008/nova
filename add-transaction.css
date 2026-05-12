@@ -1,0 +1,224 @@
+/* Add Transaction Modal Styles */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.transaction-modal {
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: rgba(10, 29, 55, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 28px 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.modal-close {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.transaction-type-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px;
+    border-radius: 12px;
+}
+
+.type-tab {
+    flex: 1;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.type-tab.active {
+    background: var(--accent);
+    color: white;
+}
+
+.type-tab.expense.active {
+    background: var(--negative);
+}
+
+.type-tab.income.active {
+    background: var(--positive);
+}
+
+.transaction-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label-modal {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-input-modal {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.form-input-modal:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.amount-input-wrapper {
+    position: relative;
+}
+
+.currency-symbol-modal {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.amount-input {
+    padding-left: 40px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.category-option {
+    padding: 12px 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-size: 14px;
+}
+
+.category-option:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.category-option.selected {
+    border-color: var(--accent);
+    background: rgba(15, 76, 129, 0.2);
+}
+
+.category-icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cancel {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, var(--accent), var(--positive));
+    border: none;
+    color: white;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(15, 76, 129, 0.4);
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

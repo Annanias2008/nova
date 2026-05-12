@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nova Budgeting - More</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="more.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="status-bar">
+            <span class="time">13:43</span>
+            <div class="status-icons">
+                <span class="refresh-indicator">↻</span>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <h1 class="page-title">More</h1>
+
+            <!-- Goals Section -->
+            <div class="section-header">
+                <h3>Goals & Savings</h3>
+                <a href="#" class="see-all">+ New Goal</a>
+            </div>
+
+            <div class="goals-grid">
+                <!-- Emergency Fund -->
+                <div class="goal-card glass-card">
+                    <div class="goal-header">
+                        <div class="goal-icon" style="background: linear-gradient(135deg, #10B981, #059669);">🏦</div>
+                        <div class="goal-info">
+                            <h4 class="goal-name">Emergency Fund</h4>
+                            <p class="goal-target">$6,700 / $10,000</p>
+                        </div>
+                    </div>
+                    <div class="goal-progress">
+                        <svg width="100" height="100" class="goal-ring">
+                            <circle cx="50" cy="50" r="40" class="ring-bg" />
+                            <circle cx="50" cy="50" r="40" class="ring-fill emerald" style="stroke-dashoffset: 83.2;" />
+                        </svg>
+                        <div class="ring-center">
+                            <span class="ring-percent">67%</span>
+                        </div>
+                    </div>
+                    <p class="goal-status">On track • Complete by Aug 2026</p>
+                    <button class="goal-contribute-btn">Contribute</button>
+                </div>
+
+                <!-- Vacation -->
+                <div class="goal-card glass-card">
+                    <div class="goal-header">
+                        <div class="goal-icon" style="background: linear-gradient(135deg, #0F4C81, #0EA5E9);">✈️</div>
+                        <div class="goal-info">
+                            <h4 class="goal-name">Japan Vacation</h4>
+                            <p class="goal-target">$1,700 / $5,000</p>
+                        </div>
+                    </div>
+                    <div class="goal-progress">
+                        <svg width="100" height="100" class="goal-ring">
+                            <circle cx="50" cy="50" r="40" class="ring-bg" />
+                            <circle cx="50" cy="50" r="40" class="ring-fill teal" style="stroke-dashoffset: 165.6;" />
+                        </svg>
+                        <div class="ring-center">
+                            <span class="ring-percent">34%</span>
+                        </div>
+                    </div>
+                    <p class="goal-status">+$250/mo • Complete by Dec 2026</p>
+                    <button class="goal-contribute-btn">Contribute</button>
+                </div>
+
+                <!-- Debt Payoff -->
+                <div class="goal-card glass-card debt-goal">
+                    <div class="goal-header">
+                        <div class="goal-icon" style="background: linear-gradient(135deg, #FF6B6B, #EF4444);">💳</div>
+                        <div class="goal-info">
+                            <h4 class="goal-name">Credit Card Payoff</h4>
+                            <p class="goal-target">$2,250 remaining</p>
+                        </div>
+                    </div>
+                    <div class="goal-progress">
+                        <svg width="100" height="100" class="goal-ring">
+                            <circle cx="50" cy="50" r="40" class="ring-bg" />
+                            <circle cx="50" cy="50" r="40" class="ring-fill coral" style="stroke-dashoffset: 113.0;" />
+                        </svg>
+                        <div class="ring-center">
+                            <span class="ring-percent">55%</span>
+                        </div>
+                    </div>
+                    <p class="goal-status">Paid off by May 2026</p>
+                    <button class="goal-contribute-btn">Make Payment</button>
+                </div>
+            </div>
+
+            <!-- AI Assistant -->
+            <div class="section-header" style="margin-top: 32px;">
+                <h3>AI Assistant</h3>
+            </div>
+
+            <div class="ai-assistant-card glass-card">
+                <div class="ai-avatar">
+                    <div class="orb-container">
+                        <div class="orb"></div>
+                        <div class="orb-glow"></div>
+                    </div>
+                </div>
+                <h4 class="ai-assistant-title">Budget Assistant</h4>
+                <p class="ai-assistant-desc">Ask me anything about your finances, budgets, or spending habits.</p>
+                <button class="ai-chat-btn">Start Chat</button>
+            </div>
+
+            <!-- Settings Menu -->
+            <div class="section-header" style="margin-top: 32px;">
+                <h3>Settings</h3>
+            </div>
+
+            <div class="settings-menu">
+                <div class="settings-group glass-card">
+                    <a href="#" class="settings-item">
+                        <span class="settings-icon">🔗</span>
+                        <span class="settings-label">Linked Accounts</span>
+                        <span class="settings-badge">3 accounts</span>
+                        <span class="settings-arrow">›</span>
+                    </a>
+                    <div class="settings-divider"></div>
+                    <a href="#" class="settings-item">
+                        <span class="settings-icon">🔔</span>
+                        <span class="settings-label">Notifications</span>
+                        <span class="settings-arrow">›</span>
+                    </a>
+                    <div class="settings-divider"></div>
+                    <a href="#" class="settings-item">
+                        <span class="settings-icon">🎨</span>
+                        <span class="settings-label">Appearance</span>
+                        <span class="settings-badge">Dark</span>
+                        <span class="settings-arrow">›</span>
+                    </a>
+                </div>
+
+                <div class="settings-group glass-card">
+                    <a href="#" class="settings-item">
+                        <span class="settings-icon">🔒</span>
+                        <span class="settings-label">Security & Privacy</span>
+                        <span class="settings-arrow">›</span>
+                    </a>
+                    <div class="settings-divider"></div>
+                    <a href="#" class="settings-item">
+                        <span class="settings-icon">📊</span>
+                        <span class="settings-label">Export Data</span>
+                        <span class="settings-arrow">›</span>
+                    </a>
+                </div>
+
+                <div class="settings-group glass-card">
+                    <a href="#" class="settings-item">
+                        <span class="settings-icon">❓</span>
+                        <span class="settings-label">Help & Support</span>
+                        <span class="settings-arrow">›</span>
+                    </a>
+                    <div class="settings-divider"></div>
+                    <a href="#" class="settings-item">
+                        <span class="settings-icon">ℹ️</span>
+                        <span class="settings-label">About NovaBudget</span>
+                        <span class="settings-badge">v1.0.0</span>
+                        <span class="settings-arrow">›</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Floating AI Orb -->
+        <button class="ai-orb-fab">
+            <div class="orb-mini"></div>
+        </button>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="transactions.html" class="nav-item">
+                <span class="nav-icon">📋</span>
+                <span class="nav-label">Transactions</span>
+            </a>
+            <a href="budgets.html" class="nav-item">
+                <span class="nav-icon">💼</span>
+                <span class="nav-label">Budgets</span>
+            </a>
+            <a href="insights.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-label">Insights</span>
+            </a>
+            <a href="more.html" class="nav-item active">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-label">More</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="more.js"></script>
+</body>
+
+</html>
